@@ -1,4 +1,4 @@
-from flask import Flask , render_template,request
+from flask import Flask , render_template,request ,redirect
 
 #instanciando
 app = Flask(__name__,template_folder='./templates')
@@ -16,11 +16,10 @@ pessoa3 = Pessoa("Sicrana","Front End", " JS")
 
 lista_pesssoas = [ pessoa1,pessoa2,pessoa3 ]
 #definindo primeira rota
+
+
 @app.route("/", methods = ['GET',])
-
 def home():
-
-  
   return render_template("index.html", pessoas = lista_pesssoas)
 
 @app.route("/cadastro/")
@@ -39,7 +38,37 @@ def cadastrarPessoas():
 
   lista_pesssoas.append(novo_cadastro)
 
-  return render_template("index.html", pessoas= lista_pesssoas)
+  return redirect("/")
+
+@app.route("/login", methods = ['get'])
+
+def login():
+
+  return render_template("login.html",)
+
+@app.route("/autenticar", methods = ['POST',])
+
+def autenticar():
+
+  usuariodefault = "admin"
+  senhadefault = "senha123"
+
+  login = request.form["login"]
+  senha = request.form["senha"]
+
+  if login == usuariodefault and senhadefault == senha :
+    return redirect("/")
+  else:
+    return redirect("/falha")
+  
+@app.route("/falha",)
+
+def falha():
+  return render_template("falha.html")
+    
+
+
+
 
 if __name__ == "__main__":
-  app.run( debug=True)
+  app.run( debug = True)

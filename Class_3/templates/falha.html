@@ -3,32 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>login</title>
   <link rel="stylesheet" href="../static/css/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <title>Class 2</title>
 </head>
 <body>
-  <h1>Class 2 </h1>
 
-  <h2>Funcionários</h2>
-  <table>
-    <thead>
-      <th>Nome</th>
-      <th>Cargo</th>
-      <th>Stacks</th>
-    </thead>
-    <tbody>
-      {% for pessoa in pessoas %}
-      <tr>
-        <td>{{ pessoa.nome }}</td>
-        <td>{{ pessoa.cargo }}</td>
-        <td>{{ pessoa.stacks }}</td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
-
-  <button ><a href="{{ url_for('cadastrar') }}"> + Adicionar pessoas</a></button>
-
+  <div class="container">
+    <h1>Login não autorizado retorne ao Inicio</h1>
+    <button  ><a href="{{ url_for('login') }}"><i class="fa-solid fa-house"></i></a></button>
+  </div>
+  
 </body>
 </html>
