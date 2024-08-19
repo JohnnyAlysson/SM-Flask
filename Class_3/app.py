@@ -3,19 +3,6 @@ from flask import Flask , render_template,request ,redirect
 #instanciando
 app = Flask(__name__,template_folder='./templates')
 
-class Pessoa:
-  def __init__(self,nome:str,cargo:str,stacks:str) -> None:
-    self.nome = nome
-    self.cargo = cargo
-    self.stacks = stacks 
-    
-
-pessoa1 = Pessoa("Johnny","Full stack", "Python, JS")
-pessoa2 = Pessoa("Fulano","Back End", "Python")
-pessoa3 = Pessoa("Sicrana","Front End", " JS")
-
-lista_pesssoas = [ pessoa1,pessoa2,pessoa3 ]
-#definindo primeira rota
 
 
 @app.route("/", methods = ['GET',])
@@ -69,6 +56,22 @@ def falha():
 
 
 
+
+
+@app.errorhandler(404)
+def page_not_found(e):
+    # note that we set the 404 status explicitly
+    return render_template('404.html'), 404
+
+@app.errorhandler(400)
+def bad_request(e):
+    # note that we set the 400 status explicitly
+    return render_template('400.html'), 400
+
+@app.errorhandler(500)
+def bad_request(e):
+    # note that we set the 500 status explicitly
+    return render_template('500.html'), 500
 
 if __name__ == "__main__":
   app.run( debug = True)
