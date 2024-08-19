@@ -3,43 +3,26 @@ from flask import Flask , render_template,request
 #instanciando
 app = Flask(__name__,template_folder='./templates')
 
-class Pessoa:
-  def __init__(self,nome:str,cargo:str,stacks:str) -> None:
-    self.nome = nome
-    self.cargo = cargo
-    self.stacks = stacks 
-    
-
-pessoa1 = Pessoa("Johnny","Full stack", "Python, JS")
-pessoa2 = Pessoa("Fulano","Back End", "Python")
-pessoa3 = Pessoa("Sicrana","Front End", " JS")
-
-lista_pesssoas = [ pessoa1,pessoa2,pessoa3 ]
-#definindo primeira rota
 @app.route("/", methods = ['GET',])
-
 def home():
+  return render_template("index.html")
 
-  
-  return render_template("index.html", pessoas = lista_pesssoas)
 
-@app.route("/cadastro/")
-#render
-def cadastrar():
-  return render_template("cadastrar_time.html")
+@app.errorhandler(404)
+def page_not_found(e):
+    # note that we set the 404 status explicitly
+    return render_template('404.html'), 404
 
-@app.route("/adicionar", methods = ['POST',])
-#função para cadastrar
-def cadastrarPessoas():
-  nome = request.form["nome"]
-  cargo = request.form["cargo"]
-  stacks = request.form["stacks"]
+@app.errorhandler(400)
+def bad_request(e):
+    # note that we set the 400 status explicitly
+    return render_template('400.html'), 400
 
-  novo_cadastro = Pessoa(nome=nome,cargo =cargo,stacks= stacks)
+@app.errorhandler(500)
+def bad_request(e):
+    # note that we set the 500 status explicitly
+    return render_template('500.html'), 500
 
-  lista_pesssoas.append(novo_cadastro)
-
-  return render_template("index.html", pessoas= lista_pesssoas)
 
 if __name__ == "__main__":
   app.run( debug=True)

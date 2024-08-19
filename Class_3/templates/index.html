@@ -4,30 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../static/css/styles.css">
-  <title>Class 2</title>
+  <title>Class 3</title>
 </head>
 <body>
-  <h1>Class 2 </h1>
+  <h1>Class 3 </h1>
 
-  <h2>Funcionários</h2>
-  <table>
-    <thead>
-      <th>Nome</th>
-      <th>Cargo</th>
-      <th>Stacks</th>
-    </thead>
-    <tbody>
-      {% for pessoa in pessoas %}
-      <tr>
-        <td>{{ pessoa.nome }}</td>
-        <td>{{ pessoa.cargo }}</td>
-        <td>{{ pessoa.stacks }}</td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
 
-  <button ><a href="{{ url_for('cadastrar') }}"> + Adicionar pessoas</a></button>
+
 
 </body>
 </html>
