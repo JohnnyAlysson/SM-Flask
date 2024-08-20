@@ -1,0 +1,106 @@
+a{
+  text-decoration: none;
+  font-style: none;
+  color: black;
+  
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 20px;
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.div {
+  max-width: 800px;
+  margin: auto;
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.1);
+}
+
+h1, h2 {
+  text-align: center;
+  color: #bb86fc;
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+label {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #03dac6;
+}
+
+fieldset{
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input[type="text"], input[type="password"] ,input[type="submit"] {
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  background-color: #2c2c2c;
+  color: #e0e0e0;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #bb86fc;
+  color: #121212;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #a370f7;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+thead {
+  background-color: #2c2c2c;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #333;
+}
+
+th {
+  background-color: #333;
+  color: #bb86fc;
+  font-weight: bold;
+  text-align: left;
+  padding: 12px;
+}
+th {
+  font-weight: bold;
+  color: #03dac6;
+}
+
+tbody tr:hover {
+  background-color: #2c2c2c;
+}
