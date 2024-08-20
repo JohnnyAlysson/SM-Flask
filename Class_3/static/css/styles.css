@@ -1,4 +1,10 @@
-/* Dark mode styles */
+a{
+  text-decoration: none;
+  font-style: none;
+  color: black;
+  
+}
+
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
@@ -22,7 +28,7 @@ h1, h2 {
   color: #bb86fc;
 }
 
-/* Form styles */
+
 form {
   display: flex;
   flex-direction: column;
@@ -66,7 +72,7 @@ button:hover {
   background-color: #a370f7;
 }
 
-/* Table styles */
+
 table {
   width: 100%;
   border-collapse: collapse;
