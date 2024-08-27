@@ -1,0 +1,15 @@
+{% extends "template.html" %}
+
+{% block conteudo %}
+    <form method="post" action="/adicionar">
+      <label for="">Nome</label>
+      <input type="text" name="nome" placeholder="Digite seu nome">
+      <label for="">Cargo</label>
+      <input type="text" name="cargo" placeholder="Digite seu cargo">
+      <label for="">Stacks</label>
+      <input type="text" name="stacks" placeholder="Quais stacks você utiliza">
+      <button type="submit">Cadastrar</button>
+
+    </form>
+
+{% endblock %}

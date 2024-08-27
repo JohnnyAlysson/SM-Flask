@@ -18,8 +18,11 @@ pessoa3 = Pessoa("Sicrana","Front End", " JS")
 
 lista_pesssoas = [ pessoa1,pessoa2,pessoa3 ]
 
-
 @app.route("/", methods = ['GET',])
+def firstpageredirect():
+  return redirect("/login")
+
+@app.route("/home", methods = ['GET',])
 def home():
   return render_template("index.html", pessoas = lista_pesssoas)
 
@@ -52,11 +55,13 @@ def autenticar():
 
   login = request.form["login"]
   senha = request.form["senha"]
+  print("funcionando")
 
   if login == usuariodefault and senhadefault == senha :
+    print("funcionando")  
     session["usuario_logado"] = request.form[login]
-
     return redirect("/")
+
   else:
     return redirect("/falha")
   
